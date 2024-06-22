@@ -5,12 +5,12 @@
  *
  * Description: print digits from 0 to 9
  *
- * Return: 0 (Sucess)
+ * Return: Always 0 (Sucess)
 */
 
 int main(void)
 {
-	int n = '0';
+	int n = 0;
 
 	while (n <= 9)
 	{

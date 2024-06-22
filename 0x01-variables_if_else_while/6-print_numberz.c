@@ -14,7 +14,7 @@ int main(void)
 
 	while (n <= 9)
 	{
-		putchart(n + 48);
+		putchar(n + 48);
 			n++;
 	}
 	printf("\n");

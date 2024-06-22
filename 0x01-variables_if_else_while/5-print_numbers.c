@@ -10,14 +10,14 @@
 
 int main(void)
 {
-	char n = '0';
+	int n = '0';
 
 	while (n <= 9)
 	{
-		putchar(n);
+		printf("%i", n);
 		n++;
 	}
-	putchar('\n');
+	printf('\n');
 	return (0);
 }
 

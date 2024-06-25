@@ -8,10 +8,8 @@
  * Return: 0 (sucess)
 */
 
-int main(void)
+void print_alphabet(void);
 {
-	void print_alphabet(void);
-	{
 		char s = 'a';
 
 		while (s <= 'z')
@@ -20,6 +18,4 @@ int main(void)
 			s++;
 		}
 		_putchar('\n');
-	}
-	return (0);
 }

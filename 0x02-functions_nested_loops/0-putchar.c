@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - Entery point
+ * main - Entry point
  *
  * Description: for loop to print _putchar
  *

@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * main - entry point
- *
- * Description: print_alphabet used for printing alphabetics
+ * print_alphabet used for printing alphabetics - utilize _putchar
  *
  * Return: 0 (sucess)
 */

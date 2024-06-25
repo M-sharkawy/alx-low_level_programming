@@ -3,7 +3,7 @@
 /**
  * main - entry point
  *
- * Description: print alphabetics
+ * Description: print_alphabet used for printing alphabetics
  *
  * Return: 0 (sucess)
 */

@@ -10,13 +10,13 @@
 
 int print_last_digit(int n)
 {
-	int lastDigit;
+	int lDigit;
 
 	if (n < 0)
-		lastDigit = -1 * (n % 10);
+		lDigit = -1 * (n % 10);
 	else
-		lastDigit = n % 10;
+		lDigit = n % 10;
 
-	_putchar(lastDigit + '0');
-	return (lastDigit);
+	_putchar(lDigit + '0');
+	return (lDigit);
 }

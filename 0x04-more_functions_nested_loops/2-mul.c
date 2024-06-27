@@ -4,8 +4,8 @@
 /**
  * mul - multiple two integers
  *
- * a@ first input
- * b@ second input
+ * @a: first input
+ * @b: second input
  *
  * Return: a*b
  */

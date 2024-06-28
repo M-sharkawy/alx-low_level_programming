@@ -3,7 +3,7 @@
 
 /**
  * main - print numbers 1 - 100 followed by a new line
- * 
+ *
  * Description: numbers that are multiples of 3 = Fizz
  * numbers that are multiples of 5 = Buzz
  * numbers that are multiples of 3 n 5 = FizzBuzz

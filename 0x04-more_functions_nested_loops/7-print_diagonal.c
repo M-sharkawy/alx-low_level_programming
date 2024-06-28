@@ -3,7 +3,7 @@
 /**
  * print_diagonal - draws a diagonal line on the terminal.
  *
- * @n: nthe number of times the character
+ * @n: n is the number of times the character
  * should be printed
 */
 

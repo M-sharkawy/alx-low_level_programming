@@ -6,7 +6,8 @@
  * Where n is the number of times the character \ should be printed
  * The diagonal should end with a \n
  * If n is 0 or less, the function should only print a \n
- * @n: new line
+ * @n: nthe number of times the character
+ * should be printed
 */
 
 void print_diagonal(int n)

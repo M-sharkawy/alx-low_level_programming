@@ -22,7 +22,7 @@ void print_square(int size)
 	{
 		for (column = 1; column <= size; column++)
 		{
-			_putchar('#');
+			_putchar(35);
 		}
 		_putchar('\n');
 	}

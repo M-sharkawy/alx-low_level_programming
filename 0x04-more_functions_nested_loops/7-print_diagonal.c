@@ -9,16 +9,20 @@
 
 void print_diagonal(int n)
 {
-	int backslash, space;
+	int a, space;
 
 	if (n <= 0)
+	{
 		_putchar('\n');
+	}
 	else
 	{
-		for (backslash = 1; backslash < n; backslash++)
+		for (a = 1; a < n; a++)
 		{
-			for (space = 1; space < backslash; space++)
+			for (space = 1; space < a; space++)
+			{
 				_putchar(32);
+			}
 			_putchar(92);
 			_putchar('\n');
 		}

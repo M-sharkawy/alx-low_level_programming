@@ -14,13 +14,16 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
 
+	/* Find the end of the 'dest' string*/
 	for (i = 0; dest[i]; i++)
 	;
 
-	for (j = 0; src[j] != '\0' && n < j; j++)
-
+	/* Copy characters from 'src' to 'dest'*/
+	/* up to 'n' bytes or until end of 'src' */
+	for (j = 0; src[j] && j < n; j++)
 	dest[i++] = src[j];
 
+	/* Add a null terminator at the end of the concatenated string */
 	dest[i] = '\0';
 
 	return (dest);

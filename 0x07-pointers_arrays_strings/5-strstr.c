@@ -12,3 +12,21 @@
 
 char *_strstr(char *haystack, char *needle)
 {
+	int index, jndex = 0, k;
+
+	for (index = 0; haystack[index] != 0; i++)
+	{
+		k = i;
+		for (jndex = 0; needle[jndex] != 0; )
+		{
+			if (haystack[k++] == needle[jndex++])
+			{
+				continue;
+			}
+			break;
+		}
+		if (needle[jndex] == '\0')
+			return ((haystack + i));
+	}
+	return (0);
+}

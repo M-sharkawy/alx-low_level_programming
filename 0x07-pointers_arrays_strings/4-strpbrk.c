@@ -21,9 +21,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			/* if both bytes are equal*/
 			if (s[index] == accept[jndex])
-			{
 				return (s + index);
-			}
 		}
 		s++;
 	}

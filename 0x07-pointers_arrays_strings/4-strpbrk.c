@@ -19,6 +19,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		for (jndex = 0; accept[jndex] != '\0'; jndex++)
 		{
+			/* if both bytes are equal*/
 			if (s[index] == accept[jndex])
 			{
 				return (s + index);

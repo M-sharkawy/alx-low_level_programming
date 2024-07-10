@@ -5,7 +5,10 @@
  * is_prime_number - a function that returns 1 ,
  * if the input integer is a prime number
  *
+ * _prime_checker - calculates if a number is prime recursively
+ *
  * @n: integer to evaluate
+ * @nd: integer
  *
  * Return: 1 if n is a prime number, 0 if not
 */
@@ -18,8 +21,10 @@ int is_prime_number(int n)
 
 /**
  * _prime_checker - calculates if a number is prime recursively
- *
+ * @n: integer
  * @nd: integer
+ *
+ * Return: 1 , 0 , percusion
 */
 
 int _prime_checker(int n, int nd)

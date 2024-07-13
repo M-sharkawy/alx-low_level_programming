@@ -7,7 +7,7 @@
  * @argc: count for arguments
  * @argv: array
  *
- * Return: 0 success
+ * Return: name of argument array
 */
 
 int main(int argc, char **argv)

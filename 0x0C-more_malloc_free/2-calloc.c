@@ -2,8 +2,13 @@
 #include "main.h"
 
 /**
- * 
- */
+ * _calloc - memory allocation using malloc
+ *
+ * @nmemb: array members
+ * @size: size in bytes
+ *
+ * Return: pointer with allocated memory for arrry
+*/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -18,8 +23,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		return (NULL);
 	}
-	else 
-	{    
+	else
+	{
 		for (i = 0; i < nmemb * size; i++)
 			ptr[i] = 0;
 	}

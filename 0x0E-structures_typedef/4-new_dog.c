@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/** 
+/**
  * _strdup - duplicate the string in the new memory
  *
  * @str: the string given
@@ -59,24 +59,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 
-  	if (!name || !owner)
+	if (!name || !owner)
 	{
-	return NULL;
+	return (NULL);
 	}
 
-  	new_dog = malloc(sizeof(dog_t));
-  	if (!new_dog)
-	 
-	return NULL;
+	  new_dog = malloc(sizeof(dog_t));
+	if (!new_dog)
+	return (NULL);
 
-  	new_dog->name = _strdup(name);
-  	new_dog->owner = _strdup(owner);
-  	if (!new_dog->name || !new_dog->owner) 
-  	{
+	new_dog->name = _strdup(name);
+	new_dog->owner = _strdup(owner);
+	if (!new_dog->name || !new_dog->owner)
+	{
 	free(new_dog);
-	return NULL;
-  	}
+	return (NULL);
+	}
 
-  	new_dog->age = age;
-  	return new_dog;
+	new_dog->age = age;
+	return (new_dog);
 }

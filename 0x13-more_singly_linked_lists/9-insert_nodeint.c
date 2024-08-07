@@ -31,12 +31,16 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (new_node);
 	}
 
-	while (i > 1)
+	for (i = 0; ptr && i < idx; i++)
 	{
-		ptr = ptr->next;
-		i--;
+		if (i == idx - 1)
+		{
+			new_node->next = ptr->next;
+			ptr->next = new_node;
+			return (new_node);
+		}
+		else
+			ptr = ptr->next;
 	}
-	new_node->next = ptr->next;
-	ptr->next = new_node;
-	return (new_node);
+	return (NULL);
 }

@@ -14,37 +14,43 @@ void error_usage(void)
 
 /**
  * error_read - if you can not read file
+ *
  * @filename: name of the file that cannot be read
- * return: nothing
+ *
+ * Return: nothing
 */
 
 void error_read(char *filename)
 {
-	dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 	exit(98);
 }
 
 /**
  * error_write - if you can not write in the file
+ *
  * @filename: name of the file that cannot be written to
- * return: nothing
+ *
+ * Return: nothing
 */
 
 void error_write(char *filename)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 	exit(99);
 }
 
 /**
  * error_close - if you can not close the file
+ *
  * @fd: file descriptor that cannot be closed
- * return: nothing
+ *
+ * Return: nothing
 */
 
 void error_close(int fd)
 {
-	dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
 
@@ -77,10 +83,12 @@ int main(int argc, char *argv[])
 	{
 		wr = write(file_to, buffer, rd);
 		if (wr == -1)
+			close(file_from);
 			error_write(argv[2]);
 	}
 
 	if (rd == -1)
+		close(file_to);
 		error_read(argv[1]);
 
 	if (close(file_from) == -1)

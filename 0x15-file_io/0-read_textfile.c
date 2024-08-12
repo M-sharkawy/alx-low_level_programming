@@ -13,11 +13,11 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
-	int fd;
+	ssize_t fd;
 	ssize_t rd;
 	ssize_t w;
 
-	if (!filename || !letters)
+	if (!filename)
 	{
 		return (0);
 	}
@@ -43,7 +43,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	close(fd);
 	free(buffer);
+	close(fd);
+
 	return (w);
 }

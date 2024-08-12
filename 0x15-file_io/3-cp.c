@@ -14,11 +14,11 @@ void error_usage(void)
 
 /**
  * error_read - if you can not read file
- *
+ * @filename: name of the file that cannot be read
  * return: nothing
 */
 
-void error_read(void)
+void error_read(char *filename)
 {
 	dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
 	exit(98);
@@ -26,11 +26,11 @@ void error_read(void)
 
 /**
  * error_write - if you can not write in the file
- *
+ * @filename: name of the file that cannot be written to
  * return: nothing
 */
 
-void error_write(void)
+void error_write(char *filename)
 {
 	dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
 	exit(99);
@@ -38,11 +38,11 @@ void error_write(void)
 
 /**
  * error_close - if you can not close the file
- *
+ * @fd: file descriptor that cannot be closed
  * return: nothing
 */
 
-void error_close(void)
+void error_close(int fd)
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
 	exit(100);
@@ -67,28 +67,31 @@ int main(int argc, char *argv[])
 
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
-		error_read();
+		error_read(argv[1]);
 
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
-		error_write();
+		error_write(argv[2]);
 
 	rd = read(file_from, buffer, 1024);
 	if (rd == -1)
-		error_read();
+		error_read(argv[1]);
 
 	while (rd > 0)
 	{
 		wr = write(file_to, buffer, rd);
 		if (wr == -1)
-			error_write();
+			error_write(argv[2]);
 	}
 
 	close(file_from);
 	close(file_to);
 
-	if (close(file_from) || close(file_to) == -1)
-		error_close();
+	if (close(file_from) == -1)
+		error_close(file_from);
+
+	if (close(file_to) == -1)
+		error_close(file_to);
 
 	return (0);
 }

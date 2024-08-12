@@ -83,13 +83,18 @@ int main(int argc, char *argv[])
 	{
 		wr = write(file_to, buffer, rd);
 		if (wr == -1)
+		{
 			close(file_from);
 			error_write(argv[2]);
+		}
 	}
 
 	if (rd == -1)
+	{
+		close(file_from);
 		close(file_to);
 		error_read(argv[1]);
+	}
 
 	if (close(file_from) == -1)
 		error_close(file_from);

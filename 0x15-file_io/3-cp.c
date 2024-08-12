@@ -82,7 +82,6 @@ int main(int argc, char *argv[])
 
 	if (rd == -1)
 		error_read(argv[1]);
-	}
 
 	if (close(file_from) == -1)
 		error_close(file_from);

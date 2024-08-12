@@ -73,19 +73,16 @@ int main(int argc, char *argv[])
 	if (file_to == -1)
 		error_write(argv[2]);
 
-	rd = read(file_from, buffer, 1024);
-	if (rd == -1)
-		error_read(argv[1]);
-
-	while (rd > 0)
+	while ((rd = read(file_from, buffer, 1024)) > 0)
 	{
 		wr = write(file_to, buffer, rd);
 		if (wr == -1)
 			error_write(argv[2]);
 	}
 
-	close(file_from);
-	close(file_to);
+	if (rd == -1)
+		error_read(argv[1]);
+	}
 
 	if (close(file_from) == -1)
 		error_close(file_from);

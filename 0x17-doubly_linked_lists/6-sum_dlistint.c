@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - function that returns the sum of all the data (n) of a l-list.
+ * sum_dlistint - function that returns the sum of all the data(n) of a l-list.
  *
  * @head: pointer to the node
  *
@@ -10,21 +10,21 @@
 
 int sum_dlistint(dlistint_t *head)
 {
-    dlistint_t *temp;
-    int sum = 0;
+	dlistint_t *temp;
+	int sum = 0;
 
-    if (head == NULL)
-    {
-        return (0);
-    }
+	if (head == NULL)
+	{
+		return (0);
+	}
 
-    temp = head;
+	temp = head;
 
-    while (temp)
-    {
-        sum += temp->n;
-        temp = temp->next; 
-    }
+	while (temp)
+	{
+		sum += temp->n;
+		temp = temp->next;
+	}
 
-    return (sum);
+	return (sum);
 }

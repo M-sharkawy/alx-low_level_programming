@@ -7,35 +7,28 @@
  *
  * Return: print the key/value in the order or nothing
 */
-
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *ptr;
 	unsigned long int index;
+	int first = 1;
 
 	if (!ht)
-	{
 		return;
-	}
 
 	printf("{");
 
 	for (index = 0; index < ht->size; index++)
 	{
-		if (!ht->array[index])
+		ptr = ht->array[index];
+		while (ptr)
 		{
-			continue;
+			if (!first)
+				printf(", ");
+			printf("'%s': '%s'", ptr->key, ptr->value);
+			first = 0;
+			ptr = ptr->next;
 		}
-		else
-		{
-			ptr = ht->array[index];
-			while (ptr)
-			{
-				printf("'%s': '%s'", ptr->key, ptr->value);
-				if (ptr->next != NULL)
-					printf(", ");
-				ptr = ptr->next;
-			}
-		}
+	}
 	printf("}\n");
 }

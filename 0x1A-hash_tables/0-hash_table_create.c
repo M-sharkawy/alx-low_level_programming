@@ -20,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	}
 
 	newtable->size = size;
-	newtable->array = malloc(sizeof(hash_table_t) * size);
+	newtable->array = malloc(sizeof(hash_table_t *) * size);
 
 	for (i = 0; i < size; i++)
 	{

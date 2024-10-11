@@ -9,29 +9,28 @@
  *
  * Return: 1 if it succeeded, 0 otherwise
 */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *newnode, *currentnode;
+	hash_node_t *newnode, *ptr;
 
 	if (!ht || !value || !key || key[0] == '\0')
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	currentnode = ht->array[index];
+	ptr = ht->array[index];
 
-	while (currentnode)
+	while (ptr)
 	{
-		if (strcmp(currentnode->key, key) == 0)
+		if (strcmp(ptr->key, key) == 0)
 		{
-			free(currentnode->value);
-			currentnode->value = strdup(value);
-			if (!currentnode->value)
+			free(ptr->value);
+			ptr->value = strdup(value);
+			if (!ptr->value)
 				return (0);
 			return (1);
 		}
-		currentnode = currentnode->next;
+		ptr = ptr->next;
 	}
 
 	newnode = malloc(sizeof(hash_node_t));

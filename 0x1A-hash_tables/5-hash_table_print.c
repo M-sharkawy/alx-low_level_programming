@@ -12,7 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *ptr;
 	unsigned long int index;
-	int first = 1;  /* Flag to track the first printed pair */
+	int first = 1;
 
 	if (!ht)
 		return;
@@ -31,6 +31,5 @@ void hash_table_print(const hash_table_t *ht)
 			ptr = ptr->next;
 		}
 	}
-
 	printf("}\n");
 }
